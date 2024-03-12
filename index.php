@@ -6,10 +6,9 @@ $config = ['settings' => [
 ]];
 $app = new \Slim\App($config);
 
-require_once('src/mysql.php');   //Consultas con PDO
-require_once('src/Routes/RouteClient.php');   //Consultas con PDO
-require_once('src/Controllers/ClientController.php');   //Consultas con PDO
-
+require_once('src/mysql.php');   // database config
+require_once('src/Routes/RouteClient.php');   // routes client
+require_once('src/Controllers/ClientController.php');   // controller client
 
 // Run app
 $app->run();

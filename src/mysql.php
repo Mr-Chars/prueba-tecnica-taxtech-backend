@@ -1,14 +1,10 @@
 <?php
 class db
 {
-
     private $db_host = "127.0.0.1";
     private $db_user = "root";
     private $db_pass = "";
     private $db_name = "tax_tech";
-    // 	private $db_user="apolomul_AaronRa";
-    // 	private $db_pass="apolomul_AaronRa";
-    // 	private $db_name="apolomul_canvaplh_app_edit_image";
 
     public function connectDb()
     {
@@ -19,44 +15,6 @@ class db
 
         return $db_coneccion;
     }
-
-    // function actualizar($consulta, $datos_actualizar)
-    // {
-    //     $respuesta = "";
-
-    //     $sql = $consulta;
-    //     $db = new db();
-    //     $db = $db->conectar_db();
-    //     $stmt = $db->prepare($sql);
-
-    //     try {
-    //         $stmt->execute($datos_actualizar);
-    //         $respuesta = '';
-    //     } catch (Exception $e) {
-    //         $respuesta = $e;
-    //     }
-
-    //     return $respuesta;
-    // }
-
-    // function borrar($consulta, $datos_borrar)
-    // {
-    //     $respuesta = "";
-
-    //     $sql = $consulta;
-    //     $db = new db();
-    //     $db = $db->conectar_db();
-    //     $stmt = $db->prepare($sql);
-
-    //     try {
-    //         $stmt->execute($datos_borrar);
-    //         $respuesta = '';
-    //     } catch (Exception $e) {
-    //         $respuesta = $e;
-    //     }
-
-    //     return $respuesta;
-    // }
 
     function getQueryInArray($consulta)
     {
@@ -83,7 +41,7 @@ class db
         }
     }
 
-    function create($consulta, $datos_agregar)
+    function post($consulta, $datos_agregar)
     {
         $respuesta = "";
 
@@ -97,6 +55,8 @@ class db
             $respuesta = $db->lastInsertId();
         } catch (Exception $e) {
             $respuesta = $e;
+        } finally {
+            $db = null;
         }
 
         return $respuesta;

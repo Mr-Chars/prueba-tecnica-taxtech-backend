@@ -17,12 +17,13 @@ $app->get('/listclients', function ($request, $response, $args) {
     $dni = $request->getQueryParam('dni');
 
     $clientController = new ClientController;
-    $clientController = $clientController->read();
+    $clients = $dni ? $clientController->readByDni($dni) : $clientController->read();
 
     return $response->withJson(
         array(
             "status" => true,
-            "data" => $clientController,
+            "dni" => $dni,
+            "data" => $clients,
         )
     );
 });
