@@ -1,4 +1,4 @@
-# Aplicación desafio tax technologi
+# Aplicación desafio tax technology
 
 El presente proyecto despliega un api crud de clientes según las información y alcance solicitado,
 
@@ -11,6 +11,9 @@ El presente proyecto despliega un api crud de clientes según las información y
 ## Como desplegar
 
 Es necesario contar con un servidor que corra php ya sea apache, nginx, etc
+
+navegar hacia el siguiente enlace
+http://localhost/desafio-tax-tech/
 
 ### ENDPOINTS
 
